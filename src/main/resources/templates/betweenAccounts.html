@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: common-header"/>
+<body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<head th:replace="common/header :: navbar"/>
+<div class="container main">
+    <div class="row">
+        <div class="col-md-6">
+            <form th:action="@{/transfer/betweenAccounts}" method="post">
+                <div class="form-group" >
+                    <label for="transferFrom">1. Выберите валюту, из которой вы хотите конвертировать в противоположную:</label>
+                    <select class="form-control" th:value="${transferFrom}" name="transferFrom" id="transferFrom" required="required">
+                        <option  disabled="disabled" selected="selected"> -- выберите -- </option>
+                        <option value="Usd">USD</option>
+                        <option value="Byn">BYN</option>
+                    </select>
+                    <br />
+                </div>
+
+                <div class="form-group" >
+                    <label for="transferTo">2. Валюта, в которую вы хотите конвертировать :</label>
+                    <select class="form-control" th:value="${transferTo}" name="transferTo" id="transferTo" required="required">
+                        <option  disabled="disabled" selected="selected"> -- выберите -- </option>
+                        <option value="Usd">USD</option>
+                        <option value="Byn">BYN</option>
+                    </select>
+                    <br />
+                </div>
+
+                <div class="form-group">
+                    <label>3. Укажите сумму, которую хотите перевести: </label>
+                    <span class="input-group-addon">Сумма</span>
+                    <input th:value="${amount}" type="text" name="amount" id="amount" class="form-control" aria-label="Amount (to the nearest dollar)"/>
+                </div>
+
+                <input type="hidden"
+                       name="${_csrf.parameterName}"
+                       value="${_csrf.token}"/>
+
+                <button class="btn btn-lg btn-usd btn-block" type="submit">Перевод</button>
+            </form>
+
+            <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="common/header :: body-bottom-scripts"/>
+
+</body>
+
+<footer class="page-footer">
+    <div class="container">
+
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+
+            <a class="grey-text text-lighten-4 right" href="https://myfin.by/bank/kursy_valjut_nbrb">Курс валюты</a>
+        </div>
+    </div>
+</footer>
+
+
+</html>

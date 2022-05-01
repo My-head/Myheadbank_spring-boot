@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header :: common-header"/>
+<body roleId="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<head th:replace="common/header :: navbar"/>
+<div class="container main">
+    <div class="row">
+        <div class="col-lg-12">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h2>Долларовый кредит: </h2>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <h1><i class="fa fa-usd" aria-hidden="true"></i> <span th:text="${usdAccount.accountBalance}">...</span></h1>
+                        </div>
+                    </div>
+                </div>
+                <a th:href="@{/account/usdAccount}">
+                    <div class="panel-footer">
+                        <span class="pull-left">Просмотр истории</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h2>Рублевый кредит: </h2>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <h1><i class="glyphicon glyphicon-xbt" aria-hidden="true"></i> <span th:text="${bynAccount.accountBalance}">...</span></h1>
+                        </div>
+                    </div>
+                </div>
+                <a th:href="@{/account/bynAccount}">
+                    <div class="panel-footer">
+                        <span class="pull-left">Просмотр истории</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-credit-card fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Кредитование</div>
+                        </div>
+                    </div>
+                </div>
+                <a th:href="@{/account/deposit}">
+                    <div class="panel-footer">
+                        <span class="pull-left">Кредитоваться</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-money fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div>Погашение кредита</div>
+                        </div>
+                    </div>
+                </div>
+                <a th:href="@{/account/withdraw}">
+                    <div class="panel-footer">
+                        <span class="pull-left">Погасить кредит</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div th:replace="common/header :: body-bottom-scripts"/>
+
+</body>
+
+    <footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h3 class="white-text"> О нас</h3>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text"> Связь с разработчиком</h5>
+                <ul>
+                    <li><a  href="https://www.linkedin.com/in/vlad-mikhed-5b296b216/">linkedin</a></li>
+                    <li><a  href="https://vk.com/vladmixed">VK</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2022 BSUIR
+            <a class="grey-text text-lighten-4 right" href="https://www.nbrb.by/">Национальный банк</a>
+        </div>
+    </div>
+</footer>
+
+</html>
